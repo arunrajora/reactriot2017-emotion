@@ -22,7 +22,7 @@ class BottomSheet extends React.Component {
 
   render() {
     return (
-        <div>
+        <div className="bottomsheet">
             <ul>
                 <li onClick={this.handleChange}>
                     {this.state.isopen? <p>Close</p>:<p>Open</p>}

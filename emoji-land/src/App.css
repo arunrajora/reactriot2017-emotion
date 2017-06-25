@@ -1,1 +1,32 @@
-.app {}
+.app {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.bubbles {
+    width: 100vw;
+    height: 100vh;
+    background-color: green;
+    position: fixed;
+}
+
+.bottomsheet {
+    position: fixed;
+}
+
+.dabba {
+    position: fixed;
+    top: -10%;
+    animation: fly 15s linear;
+}
+
+@keyframes fly {
+    0% {
+        top: 101%;
+    }
+    100% {
+        top: -10%;
+    }
+}

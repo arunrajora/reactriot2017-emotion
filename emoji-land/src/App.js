@@ -5,7 +5,7 @@ import reactfire from 'reactfire';
 
 
 import Bottomsheet from './components/Bottomsheet';
-
+import Bubbles from './components/Bubbles';
 
 const config = {
     apiKey: "AIzaSyDksGHSF4G1Bf9OaTV4_6uknskxAZh_k8Q",
@@ -30,6 +30,7 @@ class App extends Component {
     render() {
         return ( 
             <div className = "app" >
+                <Bubbles/>
                 <Bottomsheet/>
             </div>
         );
