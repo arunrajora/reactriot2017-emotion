@@ -37,10 +37,8 @@ class Post extends React.Component {
     event.preventDefault();
     this.firebaseRef.push(
         {
-            uid:"123",
             type:this.state.emotion,
             timestamp:Math.floor(Date.now()),
-            likes:0,
             content:this.state.value
         });
   }
