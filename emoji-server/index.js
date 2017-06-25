@@ -13,7 +13,7 @@ var db = admin.database();
 var ref = db.ref("posts");
 
 var emotion_values=["Happy","Sad","Confused","Angry","Love"];
-var data=[["I passed my exams",0],["I failed my exams",1],["Lost the football match",2],["Loved the game tonight",3]];
+var data=[["I passed my exams",0],["I failed my exams",1],["Why I lost the football match?",2],["How can someone be so careless?",3],["Loved the game tonight",4]];
 
 var cnt=0;
 
@@ -31,6 +31,6 @@ app.get('/', function (req, res) {
   res.send('Hello World!')
 })
 
-app.listen(3000, function () {
+app.listen(3005, function () {
   console.log('Example app listening on port 3000!')
 })

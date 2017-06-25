@@ -8,7 +8,7 @@
 .bubbles {
     width: 100vw;
     height: 100vh;
-    background-color: green;
+    background-color: black;
     position: fixed;
 }
 
@@ -19,7 +19,7 @@
 .dabba {
     position: fixed;
     top: -10%;
-    animation: fly 15s linear;
+    animation: fly 20s linear;
 }
 
 @keyframes fly {
