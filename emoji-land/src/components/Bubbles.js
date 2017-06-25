@@ -2,9 +2,38 @@ import React, { Component } from 'react';
 import firebase from 'firebase';
 import reactfire from 'reactfire';
 
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+
 class Bubbles extends Component {
 
+    state = {
+        open: false,
+        emotion:"",
+        message:""
+    };
+
+    handleOpen = (em,ms) => {
+    this.setState(
+        {
+            open: true,
+            emotion:em,
+            message:ms
+        });
+  };
+
+  handleClose = () => {
+    this.setState(
+        {
+            open: false,
+            emotion:"",
+            message:""
+        });
+  };
+
     componentDidMount(){
+        var customclickhandler=this.handleOpen;
         this.firebaseRef = firebase.database().ref("posts");
         var heha=this.firebaseRef;
         var bubbla=function(value,content,type){
@@ -29,13 +58,12 @@ class Bubbles extends Component {
                 }
                 img.classList.add('dabba');
                 img.onclick=function(){
-                    alert(content);
+                    customclickhandler(type,content);
                 }
                 var percentage= 4;
                 var heha=percentage*(value-1)+1;
                 img.style.marginLeft = heha.toString() + 'em';
                 var src = document.getElementById("bubbla");
-                console.log("got-------",src);
                 src.appendChild(img);
             }
         }; 
@@ -67,8 +95,27 @@ class Bubbles extends Component {
         this.firebaseRef.off();
     }
     render() {
+
+        const actions = [
+      <FlatButton
+        label="OK"
+        primary={true}
+        keyboardFocused={true}
+        onTouchTap={this.handleClose}
+      />
+    ];
+
         return (
             <div id="bubbla" className = "bubbles" >
+                <Dialog
+          title={this.state.emotion}
+          actions={actions}
+          modal={false}
+          open={this.state.open}
+          onRequestClose={this.handleClose}
+        >
+          {this.state.message}
+        </Dialog>
             </div>
         );
     }

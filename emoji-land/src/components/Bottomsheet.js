@@ -35,13 +35,13 @@ class BottomSheet extends React.Component {
         <div className="bottomsheet">
             <ul className="btsheet">
                 {this.state.isopen?<li className="crdd"><Post /></li>:null}
-                <li className="hehaoo" onClick={this.handleChange}>
+                <li className="hehaoo">
                     
                         
                     {this.state.isopen?
-                    <FloatingActionButton mini={true}  style={style}><NavigationClose/></FloatingActionButton>
+                    <FloatingActionButton onClick={this.handleChange} mini={true}  style={style}><NavigationClose/></FloatingActionButton>
                     :
-                    <FloatingActionButton style={style}><ContentAdd /></FloatingActionButton>} 
+                    <FloatingActionButton onClick={this.handleChange} style={style}><ContentAdd /></FloatingActionButton>} 
                     
                     
                 </li>
