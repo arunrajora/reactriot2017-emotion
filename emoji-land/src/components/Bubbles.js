@@ -65,6 +65,9 @@ class Bubbles extends Component {
                 img.style.marginLeft = heha.toString() + 'em';
                 var src = document.getElementById("bubbla");
                 src.appendChild(img);
+                setTimeout(function(){
+                    src.removeChild(img);
+                },20000);
             }
         }; 
         var cnt=0;

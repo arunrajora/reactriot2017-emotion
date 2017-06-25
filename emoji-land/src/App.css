@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 .app {
     width: 100vw;
     height: 100vh;
@@ -16,6 +20,11 @@
     position: fixed;
 }
 
+.bottomsheet ul {
+    padding: 0;
+    display: block;
+}
+
 .dabba {
     position: fixed;
     top: -10%;
@@ -24,7 +33,7 @@
 
 @keyframes fly {
     0% {
-        top: 101%;
+        top: 101vh;
     }
     100% {
         top: -10%;
@@ -78,9 +87,24 @@
 }
 
 .bada {
+    cursor: pointer;
     transform: scale3d(1.2, 1.2, 1.2);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     border-radius: 50%;
 }
 
-.chota {}
+.chota {
+    cursor: pointer;
+}
+
+.chota:hover {
+    transform: scale3d(1.2, 1.2, 1.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 50%;
+}
+
+.help-container {
+    position: fixed;
+    top: 0.1em;
+    right: 0.3em;
+}

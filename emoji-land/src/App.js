@@ -6,6 +6,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import Bottomsheet from './components/Bottomsheet';
 import Bubbles from './components/Bubbles';
+import Help from './components/Help'; 
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -37,6 +38,7 @@ class App extends Component {
             <div className = "app" >
                 <Bubbles/>
                 <Bottomsheet/>
+                <Help/>
             </div>
             </MuiThemeProvider>
         );
