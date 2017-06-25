@@ -1,18 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import firebase from 'firebase';  
-import reactfire from 'reactfire';
 
-import ReactDOM from 'react-dom';
-import Form from 'muicss/lib/react/form';
-import Input from 'muicss/lib/react/input';
-import Textarea from 'muicss/lib/react/textarea';
-import Button from 'muicss/lib/react/button';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-
-
-import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import {Card} from 'material-ui/Card';
 
 class Post extends React.Component {
   
@@ -75,7 +66,7 @@ class Post extends React.Component {
                 <ul className="messemo">
                     {
                         emotion_values.map((value) =>
-                        <li key={value.toString()} id={value} onClick={this.handleClick}><img className={this.state.emotion===value?"bada":"chota"} src={require('../emojis/'+value+'.png')}/></li>
+                        <li key={value.toString()} id={value} onClick={this.handleClick}><img alt={value} className={this.state.emotion===value?"bada":"chota"} src={require('../emojis/'+value+'.png')}/></li>
                         )
                     }
                 </ul>

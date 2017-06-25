@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
-import reactfire from 'reactfire';
 
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
 
 class Bubbles extends Component {
 
@@ -52,7 +50,7 @@ class Bubbles extends Component {
                     case "Angry":
                         img.src = require('../emojis/Angry.png');
                     break;
-                    case "Love":
+                    default:
                         img.src = require('../emojis/Love.png');
                     break;
                 }

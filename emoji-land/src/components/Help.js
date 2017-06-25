@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
 import IconButton from 'material-ui/IconButton';
 import ActionHelp from 'material-ui/svg-icons/action/help-outline';
-import {blue500, red500, greenA200} from 'material-ui/styles/colors';
+import {red500, greenA200} from 'material-ui/styles/colors';
 
 const styles = {
   smallIcon: {

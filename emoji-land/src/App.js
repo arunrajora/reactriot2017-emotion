@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import firebase from 'firebase';
-import reactfire from 'reactfire';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import Bottomsheet from './components/Bottomsheet';

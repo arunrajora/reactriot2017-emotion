@@ -1,8 +1,4 @@
-import React, { Component } from 'react';
-import firebase from 'firebase';  
-import reactfire from 'reactfire';
-
-import ReactDOM from 'react-dom';
+import React from 'react';
 
 import Post from "./Post";
 
