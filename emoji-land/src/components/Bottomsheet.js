@@ -22,14 +22,16 @@ class BottomSheet extends React.Component {
 
   render() {
     return (
+        <center>
         <div className="bottomsheet">
-            <ul>
+            <ul className="btsheet">
                 <li onClick={this.handleChange}>
-                    {this.state.isopen? <p>Close</p>:<p>Open</p>}
+                    Post{this.state.isopen? <img src={require('../emojis/open.svg')}/>:<img src={require('../emojis/close.svg')}/>}
                 </li>
                 {this.state.isopen?<li ><Post /></li>:null}
             </ul>
         </div>
+        </center>
     );
   }
 }

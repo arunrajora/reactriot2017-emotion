@@ -50,20 +50,22 @@ class Post extends React.Component {
   render() {
     var emotion_values=["Happy","Sad","Confused","Angry","Love"];
     return (
+      <center>
             <form onSubmit={ this.handleSubmit }>
                 <label>
                     Name:
                     <input type="text" value={this.state.value} onChange={this.handleChange} />
                 </label>
-                <ul>
+                <ul className="messemo">
                     {
                         emotion_values.map((value) =>
-                        <li key={value.toString()} id={value} onClick={this.handleClick}>{value}</li>
+                        <li key={value.toString()} id={value} onClick={this.handleClick}><img src={require('../emojis/'+value+'.png')}/></li>
                         )
                     }
                 </ul>
                 <input type="submit" value="Submit" />
       </form>
+      </center>
     );
   }
 }

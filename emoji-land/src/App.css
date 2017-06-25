@@ -8,7 +8,7 @@
 .bubbles {
     width: 100vw;
     height: 100vh;
-    background-color: black;
+    background-color: whitesmoke;
     position: fixed;
 }
 
@@ -29,4 +29,32 @@
     100% {
         top: -10%;
     }
+}
+
+.btsheet {
+    padding: 12px;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.9);
+    mix-blend-mode: screen;
+}
+
+.btsheet li {
+    display: flex;
+    flex-direction: column;
+}
+
+.messemo {
+    display: block;
+    flex-direction: row;
+    align-items: center;
+}
+
+.messemo li {
+    display: inline-block;
+    margin: 12px;
 }

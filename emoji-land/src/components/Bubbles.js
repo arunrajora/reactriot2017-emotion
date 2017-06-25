@@ -39,27 +39,27 @@ class Bubbles extends Component {
             }
         }; 
         var cnt=0;
-        var myVar = setInterval(function(){
-            var blo=window.innerWidth/parseFloat(getComputedStyle(document.querySelector('body'))['font-size']);
-            
+        setInterval(function(){
             var blocks=window.innerWidth/parseFloat(getComputedStyle(document.querySelector('body'))['font-size']);
-            blocks=blocks/5;
+            blocks=blocks/4.1;
             var arr=[];
             var req=0;
             for(var i=0;i<blocks;i++){
                 arr.push(Math.round(Math.random()+0.2)*(i+1));
-                if(arr[i]!=0){
+                if(arr[i]!==0){
                     req++;
                 }
             }
-            console.log(arr);
-            heha.orderByChild('timestamp').startAt(Math.floor(Date.now())-3000).limitToLast(req).on('child_added', function(data) {
-                if(arr[cnt]!=0)
+            heha.orderByChild('timestamp').startAt(Math.floor(Date.now())-30000).limitToLast(req).once('value', function(dataa) {
+                dataa.forEach(function(data,pos) {
+                if(arr[cnt]!==0)
                     bubbla(arr[cnt],data.val().content,data.val().type);
                 cnt++;
                 cnt%=arr.length;
+                });
+
             });
-        }, 1500);
+        }, 1000);
     }
 
     componentWillUnmount() {
