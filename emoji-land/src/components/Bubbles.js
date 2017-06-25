@@ -35,6 +35,7 @@ class Bubbles extends Component {
                 var heha=percentage*(value-1)+1;
                 img.style.marginLeft = heha.toString() + 'em';
                 var src = document.getElementById("bubbla");
+                console.log("got-------",src);
                 src.appendChild(img);
             }
         }; 
@@ -59,7 +60,7 @@ class Bubbles extends Component {
                 });
 
             });
-        }, 1000);
+        }, 1500);
     }
 
     componentWillUnmount() {

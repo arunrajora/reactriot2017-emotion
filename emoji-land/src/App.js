@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import firebase from 'firebase';
 import reactfire from 'reactfire';
-
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import Bottomsheet from './components/Bottomsheet';
 import Bubbles from './components/Bubbles';
+
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 const config = {
     apiKey: "AIzaSyDksGHSF4G1Bf9OaTV4_6uknskxAZh_k8Q",
@@ -17,6 +20,7 @@ const config = {
 };
 firebase.initializeApp(config);
 
+injectTapEventPlugin();
 
 class App extends Component {
 
@@ -29,10 +33,12 @@ class App extends Component {
     }
     render() {
         return ( 
+            <MuiThemeProvider muiTheme={getMuiTheme()}>
             <div className = "app" >
                 <Bubbles/>
                 <Bottomsheet/>
             </div>
+            </MuiThemeProvider>
         );
     }
 }

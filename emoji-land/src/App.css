@@ -39,22 +39,48 @@
     position: fixed;
     bottom: 0px;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0.9);
-    mix-blend-mode: screen;
 }
 
 .btsheet li {
-    display: flex;
-    flex-direction: column;
+    display: block;
 }
 
 .messemo {
     display: block;
     flex-direction: row;
     align-items: center;
+    padding-left: 0 !important;
 }
 
 .messemo li {
     display: inline-block;
+    margin: 0.5em;
+}
+
+.messemo li:nth-child(1) {
+    margin-right: 0.5em !important;
+    margin-left: 0 !important;
+}
+
+.messemo li:nth-last-child(1) {
+    margin-left: 0.5em !important;
+    margin-right: 0 !important;
+}
+
+.hehaoo div {
+    position: relative;
+}
+
+.crdd {
+    display: block;
+    max-width: 24em;
     margin: 12px;
 }
+
+.bada {
+    transform: scale3d(1.2, 1.2, 1.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 50%;
+}
+
+.chota {}

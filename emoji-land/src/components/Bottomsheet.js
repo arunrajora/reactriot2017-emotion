@@ -6,6 +6,10 @@ import ReactDOM from 'react-dom';
 
 import Post from "./Post";
 
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
+
 class BottomSheet extends React.Component {
   
   constructor(props) {
@@ -21,14 +25,26 @@ class BottomSheet extends React.Component {
   }
 
   render() {
+
+      const style = {
+  marginRight: 20,
+};
+
     return (
         <center>
         <div className="bottomsheet">
             <ul className="btsheet">
-                <li onClick={this.handleChange}>
-                    Post{this.state.isopen? <img src={require('../emojis/open.svg')}/>:<img src={require('../emojis/close.svg')}/>}
+                {this.state.isopen?<li className="crdd"><Post /></li>:null}
+                <li className="hehaoo" onClick={this.handleChange}>
+                    
+                        
+                    {this.state.isopen?
+                    <FloatingActionButton mini={true}  style={style}><NavigationClose/></FloatingActionButton>
+                    :
+                    <FloatingActionButton style={style}><ContentAdd /></FloatingActionButton>} 
+                    
+                    
                 </li>
-                {this.state.isopen?<li ><Post /></li>:null}
             </ul>
         </div>
         </center>

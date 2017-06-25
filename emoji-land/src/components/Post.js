@@ -7,6 +7,12 @@ import Form from 'muicss/lib/react/form';
 import Input from 'muicss/lib/react/input';
 import Textarea from 'muicss/lib/react/textarea';
 import Button from 'muicss/lib/react/button';
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
+
+
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
 
 class Post extends React.Component {
   
@@ -35,12 +41,16 @@ class Post extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    if(this.state.value.length>100){
+       return;
+    }
     this.firebaseRef.push(
         {
             type:this.state.emotion,
             timestamp:Math.floor(Date.now()),
             content:this.state.value
         });
+    this.setState({value: ""});
   }
 
   handleClick(event){
@@ -49,22 +59,29 @@ class Post extends React.Component {
 
   render() {
     var emotion_values=["Happy","Sad","Confused","Angry","Love"];
+    const style = {
+  margin: 12,
+};
     return (
       <center>
-            <form onSubmit={ this.handleSubmit }>
-                <label>
-                    Name:
-                    <input type="text" value={this.state.value} onChange={this.handleChange} />
-                </label>
+        <Card>
+            <form>
+              <TextField value={this.state.value} onChange={this.handleChange}
+                  hintText="Post your emotion anonymously here! (maximum 100 characters)"
+                  multiLine={true}
+                  errorText={this.state.value.length>100?"Maximum 100 Characters":null}
+                  rows={4}
+                  rowsMax={4}/>
                 <ul className="messemo">
                     {
                         emotion_values.map((value) =>
-                        <li key={value.toString()} id={value} onClick={this.handleClick}><img src={require('../emojis/'+value+'.png')}/></li>
+                        <li key={value.toString()} id={value} onClick={this.handleClick}><img className={this.state.emotion===value?"bada":"chota"} src={require('../emojis/'+value+'.png')}/></li>
                         )
                     }
                 </ul>
-                <input type="submit" value="Submit" />
-      </form>
+                <RaisedButton onClick={this.handleSubmit} label="Post" primary={true} style={style} />
+            </form>
+        </Card>
       </center>
     );
   }
